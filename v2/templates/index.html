@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>{$titulo}</title>
+    </head>
+    <body>
+        <h1>{$titulo}</h1>
+        {foreach name=categorias from=$categorias item=categoria}
+            {if $smarty.foreach.categorias.iteration%2==0}
+                <a href="{$categoria.url}" title="{$categoria.categoria}">{$categoria.categoria}</a>
+            {else}
+                <a href="{$categoria.url}" title="{$categoria.categoria}">{$categoria.categoria}</a>
+            {/if}
+            
+        {/foreach}
+    </body>
+</html>

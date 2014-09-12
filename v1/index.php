@@ -1,10 +1,13 @@
 <?php
     $user = '';
-    $subtitle = 'asdas';
+    $subtitle = '';
     if(isset($_GET[user])){
         $user = $_GET[user];
         if($user == 'adm_cnacional'){
             $subtitle = 'Colegio Nacional | ';
+        }
+        if($user == 'adm_cabello'){
+            $subtitle = 'Colegio Andrés Bello | ';
         }
     }
 ?>
@@ -46,7 +49,6 @@
         </style>
     </head>
     <body>
-
         <div id="wrapper">
             <nav class="navbar-default navbar-static-side" role="navigation">
                 <div class="sidebar-collapse">
@@ -59,8 +61,8 @@
                                 </span>
                                 <a href="#">
                                     <span class="clear">
-                                        <span class="block m-t-xs"> <strong class="font-bold" style="color: #fff; font-size: 14pt;">Colegio Nacional</strong></span>
-                                        <span class="text-muted text-xs block" style="color: #fff; font-size: 12pt;">Desde 1936</span>
+                                        <span class="block m-t-xs"> <strong class="font-bold" style="color: #fff; font-size: 14pt;">Colegio Andrés Bello</strong></span>
+                                        <span class="text-muted text-xs block" style="color: #fff; font-size: 12pt;"></span>
                                     </span>
                                 </a>
                             </div>
@@ -69,13 +71,18 @@
                             </div>
                         </li>
                         <li class="active">
+                            <?php if($user != ''){?>
                             <a href="index.php"><i class="fa fa-home"></i> <span class="nav-label">Inicio</span></a>
+                            <?php } else { ?>
+                            <a href="index.php?user=<?php echo $user; ?>"><i class="fa fa-home"></i> <span class="nav-label">Inicio</span></a>                            
+                            <?php }?>
                         </li>
-                        <li class="">
-                            <a href="index.php"><i class="fa fa-phone"></i> <span class="nav-label">Quienes somos</span> </a>
-                        </li>
-                        <li class="">
-                            <a href="index.php"><i class="fa fa-newspaper-o"></i> <span class="nav-label">Noticias</span> </a>
+                        <li class="">                            
+                            <?php if($user != ''){?>
+                            <a href="news.php"><i class="fa fa-newspaper-o"></i> <span class="nav-label">Noticias</span> </a>
+                            <?php } else { ?>                            
+                            <a href="news.php?user=<?php echo $user; ?>"><i class="fa fa-newspaper-o"></i> <span class="nav-label">Noticias</span> </a>
+                            <?php }?>
                         </li>
                         <li class="">
                             <a href="index.php"><i class="fa fa-group"></i> <span class="nav-label">Equipo</span> </a>
@@ -147,7 +154,55 @@
                 </div>
 
                 <!-- CONTENIDO DEL SITIO -->
-                        <?php echo $subtitle; ?>
+                <!-- Contenido de index -->
+                <div class="row" style="max-height: 600px;">
+                    <div class="col-lg-6">
+                        <div class="jumbotron">
+                            <h1>Colegio Andrés Bello</h1>
+                            <h3 class="text-justify">Nuestro colegio con 30 años al servicio de la educación y el aprendizaje, en su educativo, avanzan con un alto desarrollo intelectual, formal y espiritual, donde el alumno se integra a la sociedad como un ser íntegro capacitado para ser un líder positivo, con amor y respeto a sí mismo y a los demás, comenzando en la educación Pre Básica hasta el término de su Educación Media Científica Humanista entregando jóvenes de sólida formación, cimiento fundamental para proseguir su educación superior con el objetivo de ser grandes personas, capaces de vivir su vocación y participar en la sociedad con principios éticos, valóricos, religiosos y con amplio sentido en cuanto al concepto y sentido de Educación.</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <br />
+                        <br />
+                        <br />
+                        <img src="image/presentacion.jpg" alt="Colegio Andrés Bello" style="max-width: 100%;    ">
+                    </div>
+                </div>
+                <!-- Contenido de index -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+                                <h5>Nuestra misión</h5>
+                            </div>
+                            <div class="ibox-content">
+                                <p class="text-justify">Entregar una educación de calidad; siendo éste un lugar de aprendizaje, que pone el saber al alcance de todos, brindando las herramientas necesarias para que nuestros alumnos sean directores de su propio aprendizaje, y una formación integral que los capacite adecuadamente para enfrentar los desafíos que plantea la sociedad moderna. Crear un clima apropiado para que los alumnos creen un espacio donde niños y jóvenes aprendan a vivir en comunidad, alcanzando un desarrollo emocional equilibrado y mentalmente sano, fomentando actitudes positivas de convivencia y comportamientos con principios éticos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+                                <h5>Nuestros valores</h5>
+                            </div>
+                            <div class="ibox-content">
+                                <ul>
+                                    <li><p>Responsabilidad: Asumir las actividades y deberes en los que se compromete.</p></li>
+                                    <li><p>Respeto: Mantener una actitud cordial con todos los integrantes de la unidad educativa.</p></li>
+                                    <li><p>Tolerancia: Respeto y consideración hacia las diferentes formas de pensar, actuar y sentir de los demás, entendiendo la diversidad de manifestaciones espirituales ideales y sociales.</p></li>
+                                    <li><p>Solidaridad: Voluntad para cooperar y colaborar, tanto en los planos afectivos como institucionales (Cantos, eventos, campañas estudios otros).</p></li>
+                                    <li><p>Honestidad: Actuar con rectitud y sinceridad tomando conciencia de la autenticidad y enfatizándose en el deseo de hacer el bien.</p></li>
+                                    <li><p>Fraternidad: Aprender a compartir con los iguales en la búsqueda de un bien común.</p></li>
+                                    <li><p>Autonomía: Tener la capacidad de autocontrol de sus emociones sin dejarse influenciar ni mediatizar por ningún tipo de condicionante.</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- CONTENIDO DEL SITIO -->
             </div>
         </div>

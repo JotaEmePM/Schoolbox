@@ -35,6 +35,8 @@
             {
                 if($_POST['usuario'] == 'adm_cnacional' && $_POST['password'] == '123456'){
                     header( 'Location: index.php?user=adm_cnacional' ) ;
+                } elseif($_POST['usuario'] == 'adm_cabello' && $_POST['password'] == '123456'){
+                    header( 'Location: index.php?user=adm_cabello' ) ;
                 } else {
                     $error = 1;   
                 }
