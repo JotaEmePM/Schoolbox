@@ -5,9 +5,11 @@
         $user = $_GET['user'];
         if($user == 'adm_cnacional'){
             $subtitle = 'Colegio Nacional | ';
+            $folder = 'c1';
         }
         if($user == 'adm_cabello'){
             $subtitle = 'Colegio Andrés Bello | ';
+            $folder = 'c2';
         }
     }
 
@@ -15,9 +17,11 @@
         $colegio = $_GET['colegio'];
         if($colegio == '1'){
             $subtitle = 'Colegio Nacional | ';
+            $folder = 'c1';
         }
         if($colegio == '2'){
             $subtitle = 'Colegio Andrés Bello | ';
+            $folder = 'c2';
         }
     }
 ?>
@@ -67,7 +71,7 @@
                             <div class="back-black degradado-black"></div>
                             <div class="profile-element">
                                 <span style="">
-                                    <img alt="image" src="image/logo.png" style="max-width: 60px; max-height: 60px;" />
+                                    <img alt="image" src="image/<?php echo $folder ?>/logo.png" style="max-width: 60px; max-height: 60px;" />
                                 </span>
                                 <a href="#">
                                     <span class="clear">
