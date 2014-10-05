@@ -61,7 +61,7 @@
                                 </span>
                                 <a href="#">
                                     <span class="clear">
-                                        <span class="block m-t-xs"> <strong class="font-bold" style="color: #fff; font-size: 14pt;">Colegio Andrés Bello</strong></span>
+                                        <span class="block m-t-xs"> <strong class="font-bold" style="color: #fff; font-size: 14pt;"> <?php echo str_replace('|', '', $subtitle);?> </strong></span>
                                         <span class="text-muted text-xs block" style="color: #fff; font-size: 12pt;"></span>
                                     </span>
                                 </a>
@@ -72,16 +72,16 @@
                         </li>
                         <li class="active">
                             <?php if($user != ''){?>
-                            <a href="index.php"><i class="fa fa-home"></i> <span class="nav-label">Inicio</span></a>
+                                <a href="index.php"><i class="fa fa-home"></i> <span class="nav-label">Inicio</span></a>
                             <?php } else { ?>
-                            <a href="index.php?user=<?php echo $user; ?>"><i class="fa fa-home"></i> <span class="nav-label">Inicio</span></a>                            
+                                <a href="index.php?user=<?php echo $user; ?>"><i class="fa fa-home"></i> <span class="nav-label">Inicio</span></a>                            
                             <?php }?>
                         </li>
                         <li class="">                            
                             <?php if($user != ''){?>
-                            <a href="news.php"><i class="fa fa-newspaper-o"></i> <span class="nav-label">Noticias</span> </a>
+                                <a href="news.php"><i class="fa fa-newspaper-o"></i> <span class="nav-label">Noticias</span> </a>
                             <?php } else { ?>                            
-                            <a href="news.php?user=<?php echo $user; ?>"><i class="fa fa-newspaper-o"></i> <span class="nav-label">Noticias</span> </a>
+                                <a href="news.php?user=<?php echo $user; ?>"><i class="fa fa-newspaper-o"></i> <span class="nav-label">Noticias</span> </a>
                             <?php }?>
                         </li>
                         <li class="">
@@ -158,7 +158,8 @@
                 <div class="row" style="max-height: 600px;">
                     <div class="col-lg-6">
                         <div class="jumbotron">
-                            <h1>Colegio Andrés Bello</h1>
+
+                            <h1><?php echo str_replace('|', '', $subtitle);?> </h1>
                             <h3 class="text-justify">Nuestro colegio con 30 años al servicio de la educación y el aprendizaje, en su educativo, avanzan con un alto desarrollo intelectual, formal y espiritual, donde el alumno se integra a la sociedad como un ser íntegro capacitado para ser un líder positivo, con amor y respeto a sí mismo y a los demás, comenzando en la educación Pre Básica hasta el término de su Educación Media Científica Humanista entregando jóvenes de sólida formación, cimiento fundamental para proseguir su educación superior con el objetivo de ser grandes personas, capaces de vivir su vocación y participar en la sociedad con principios éticos, valóricos, religiosos y con amplio sentido en cuanto al concepto y sentido de Educación.</h3>
                         </div>
                     </div>
