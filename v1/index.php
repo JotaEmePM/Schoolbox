@@ -5,11 +5,11 @@
         $user = $_GET['user'];
         if($user == 'adm_cnacional'){
             $subtitle = 'Colegio Nacional | ';
-            $folder = 'c1';
+            $colegio = 'c1';
         }
         if($user == 'adm_cabello'){
             $subtitle = 'Colegio Andrés Bello | ';
-            $folder = 'c2';
+            $colegio = 'c2';
         }
     }
 
@@ -17,11 +17,9 @@
         $colegio = $_GET['colegio'];
         if($colegio == '1'){
             $subtitle = 'Colegio Nacional | ';
-            $folder = 'c1';
         }
         if($colegio == '2'){
             $subtitle = 'Colegio Andrés Bello | ';
-            $folder = 'c2';
         }
     }
 ?>
@@ -39,7 +37,7 @@
         <link rel="stylesheet" href="css/style.css">
         <style>
             .nav-header{           
-                background: url("/School.jpg") repeat scroll 0 0;
+                background:url("/Schoolbox/v1/image/<?php echo $colegio ?>/School.jpg") no-repeat scroll 0 0;
                 background-size: 220px 180px;
             }  
             .profile-element {
@@ -54,8 +52,8 @@
                 top: 0px;
             }
             .degradado-black {
-                background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #000), color-stop(1, #101010));
-                background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.38));
+               background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #000), color-stop(1, #101010));
+                background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.88));
                 background-image: -moz-linear-gradient(center top , rgba(0, 0, 0, 0.06), rgba(16, 16, 16, 0.49));
                 background-image: -o-linear-gradient(top, #000, #101010);
                 filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#000', EndColorStr='#101010');
@@ -71,7 +69,7 @@
                             <div class="back-black degradado-black"></div>
                             <div class="profile-element">
                                 <span style="">
-                                    <img alt="image" src="image/<?php echo $folder ?>/logo.png" style="max-width: 60px; max-height: 60px;" />
+                                    <img alt="image" src="image/<?php echo $colegio ?>/logo.png" style="max-width: 60px; max-height: 60px;" />
                                 </span>
                                 <a href="#">
                                     <span class="clear">
@@ -174,14 +172,18 @@
                         <div class="jumbotron">
 
                             <h1><?php echo str_replace('|', '', $subtitle);?> </h1>
-                            <h3 class="text-justify">Nuestro colegio con 30 años al servicio de la educación y el aprendizaje, en su educativo, avanzan con un alto desarrollo intelectual, formal y espiritual, donde el alumno se integra a la sociedad como un ser íntegro capacitado para ser un líder positivo, con amor y respeto a sí mismo y a los demás, comenzando en la educación Pre Básica hasta el término de su Educación Media Científica Humanista entregando jóvenes de sólida formación, cimiento fundamental para proseguir su educación superior con el objetivo de ser grandes personas, capaces de vivir su vocación y participar en la sociedad con principios éticos, valóricos, religiosos y con amplio sentido en cuanto al concepto y sentido de Educación.</h3>
+                            <?php if($colegio == 1){?>
+                                <h3 class="text-justify">Nuestro colegio con 30 años al servicio de la educación y el aprendizaje, en su educativo, avanzan con un alto desarrollo intelectual, formal y espiritual, donde el alumno se integra a la sociedad como un ser íntegro capacitado para ser un líder positivo, con amor y respeto a sí mismo y a los demás, comenzando en la educación Pre Básica hasta el término de su Educación Media Científica Humanista entregando jóvenes de sólida formación, cimiento fundamental para proseguir su educación superior con el objetivo de ser grandes personas, capaces de vivir su vocación y participar en la sociedad con principios éticos, valóricos, religiosos y con amplio sentido en cuanto al concepto y sentido de Educación.</h3>
+                            <?php }else{ ?>
+                                <h3 class="text-justify">El Colegio Particular N°95 Andrés Bello, es una institución de educación humanista científica que funda su línea de acción a partir del compromiso social y la conciencia ambiental. Dentro de este contexto, esta unidad educativa, articula desde la familia, la promoción de competencias que habiliten al alumno para una inserción real y efectiva dentro de la sociedad productiva y paralelamente con una mirada ecológica sistémica y sostenible del desarrollo, teniendo como objetivo final el ingreso a la educación superior.</h3>
+                            <?php } ?>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <br />
                         <br />
                         <br />
-                        <img src="image/presentacion.jpg" alt="Colegio Andrés Bello" style="max-width: 100%;    ">
+                        <img src="image/<?php echo $colegio ?>/presentacion.jpg" alt="Colegio Andrés Bello" style="max-width: 100%;    ">
                     </div>
                 </div>
                 <!-- Contenido de index -->
@@ -204,15 +206,27 @@
                                 <h5>Nuestros valores</h5>
                             </div>
                             <div class="ibox-content">
-                                <ul>
-                                    <li><p>Responsabilidad: Asumir las actividades y deberes en los que se compromete.</p></li>
-                                    <li><p>Respeto: Mantener una actitud cordial con todos los integrantes de la unidad educativa.</p></li>
-                                    <li><p>Tolerancia: Respeto y consideración hacia las diferentes formas de pensar, actuar y sentir de los demás, entendiendo la diversidad de manifestaciones espirituales ideales y sociales.</p></li>
-                                    <li><p>Solidaridad: Voluntad para cooperar y colaborar, tanto en los planos afectivos como institucionales (Cantos, eventos, campañas estudios otros).</p></li>
-                                    <li><p>Honestidad: Actuar con rectitud y sinceridad tomando conciencia de la autenticidad y enfatizándose en el deseo de hacer el bien.</p></li>
-                                    <li><p>Fraternidad: Aprender a compartir con los iguales en la búsqueda de un bien común.</p></li>
-                                    <li><p>Autonomía: Tener la capacidad de autocontrol de sus emociones sin dejarse influenciar ni mediatizar por ningún tipo de condicionante.</p></li>
-                                </ul>
+                                <?php if($colegio == 1){?>
+                                    <ul>
+                                        <li><p>1.Responsabilidad: Asumir las actividades y deberes en los que se compromete.</p></li>
+                                        <li><p>Respeto: Mantener una actitud cordial con todos los integrantes de la unidad educativa.</p></li>
+                                        <li><p>Tolerancia: Respeto y consideración hacia las diferentes formas de pensar, actuar y sentir de los demás, entendiendo la diversidad de manifestaciones espirituales ideales y sociales.</p></li>
+                                        <li><p>Solidaridad: Voluntad para cooperar y colaborar, tanto en los planos afectivos como institucionales (Cantos, eventos, campañas estudios otros).</p></li>
+                                        <li><p>Honestidad: Actuar con rectitud y sinceridad tomando conciencia de la autenticidad y enfatizándose en el deseo de hacer el bien.</p></li>
+                                        <li><p>Fraternidad: Aprender a compartir con los iguales en la búsqueda de un bien común.</p></li>
+                                        <li><p>Autonomía: Tener la capacidad de autocontrol de sus emociones sin dejarse influenciar ni mediatizar por ningún tipo de condicionante.</p></li>
+                                    </ul>
+                                <?php }elseif($colegio == 2){?>
+                                    <ul>
+                                        <li><p>2.Responsabilidad: Asumir las actividades y deberes en los que se compromete.</p></li>
+                                        <li><p>Respeto: Mantener una actitud cordial con todos los integrantes de la unidad educativa.</p></li>
+                                        <li><p>Tolerancia: Respeto y consideración hacia las diferentes formas de pensar, actuar y sentir de los demás, entendiendo la diversidad de manifestaciones espirituales ideales y sociales.</p></li>
+                                        <li><p>Solidaridad: Voluntad para cooperar y colaborar, tanto en los planos afectivos como institucionales (Cantos, eventos, campañas estudios otros).</p></li>
+                                        <li><p>Honestidad: Actuar con rectitud y sinceridad tomando conciencia de la autenticidad y enfatizándose en el deseo de hacer el bien.</p></li>
+                                        <li><p>Fraternidad: Aprender a compartir con los iguales en la búsqueda de un bien común.</p></li>
+                                        <li><p>Autonomía: Tener la capacidad de autocontrol de sus emociones sin dejarse influenciar ni mediatizar por ningún tipo de condicionante.</p></li>
+                                    </ul>
+                                <?php }?>
                             </div>
                         </div>
                     </div>
