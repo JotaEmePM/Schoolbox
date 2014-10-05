@@ -1,8 +1,8 @@
 <?php
     $user = '';
     $subtitle = '';
-    if(isset($_GET[user])){
-        $user = $_GET[user];
+    if(isset($_GET['user'])){
+        $user = $_GET['user'];
         if($user == 'adm_cnacional'){
             $subtitle = 'Colegio Nacional | ';
         }

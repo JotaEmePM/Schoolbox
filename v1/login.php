@@ -31,7 +31,8 @@
     </head>
     <body class="gray-bg">
         <?php
-            if (count($postIdentifierArr) == 2)
+        // var_dump($postIdentifierArr); die();
+            if ( isset($postIdentifierArr) && count($postIdentifierArr) == 2)
             {
                 if($_POST['usuario'] == 'adm_cnacional' && $_POST['password'] == '123456'){
                     header( 'Location: index.php?user=adm_cnacional' ) ;
