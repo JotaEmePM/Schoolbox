@@ -10,6 +10,16 @@
             $subtitle = 'Colegio Andrés Bello | ';
         }
     }
+
+    if(isset($_GET['colegio'])){
+        $colegio = $_GET['colegio'];
+        if($colegio == '1'){
+            $subtitle = 'Colegio Nacional | ';
+        }
+        if($colegio == '2'){
+            $subtitle = 'Colegio Andrés Bello | ';
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
