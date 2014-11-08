@@ -1,7 +1,9 @@
 <?php
     $user = '';
     $subtitle = '';
+    // var_dump($_GET);die();
     if(isset($_GET['user'])){
+        // die('a');
         $user = $_GET['user'];
         if($user == 'adm_cnacional'){
             $subtitle = 'Colegio Nacional | ';
@@ -62,6 +64,8 @@
     </head>
     <body>
         <div id="wrapper">
+
+            <!--menu-->
             <nav class="navbar-default navbar-static-side" role="navigation">
                 <div class="sidebar-collapse">
                     <ul class="nav" id="side-menu">
@@ -83,15 +87,15 @@
                             </div>
                         </li>
                         <li class="active">
-                            <?php if($user != ''){?>
-                                <a href="index.php"><i class="fa fa-home"></i> <span class="nav-label">Inicio</span></a>
+                            <?php if($user == ''){?>
+                                <a href="index.php?colegio=1"><i class="fa fa-home"></i> <span class="nav-label">Inicio</span></a>
                             <?php } else { ?>
-                                <a href="index.php?user=<?php echo $user; ?>"><i class="fa fa-home"></i> <span class="nav-label">Inicio</span></a>                            
+                                <a href="index.php?user=<?php echo $user; ?>"><i class="fa fa-home"></i> <span class="nav-label">Inicio2</span></a>                            
                             <?php }?>
                         </li>
                         <li class="">                            
-                            <?php if($user != ''){?>
-                                <a href="news.php"><i class="fa fa-newspaper-o"></i> <span class="nav-label">Noticias</span> </a>
+                            <?php if($user == ''){?>
+                                <a href="news.php?colegio=1"><i class="fa fa-newspaper-o"></i> <span class="nav-label">Noticias</span> </a>
                             <?php } else { ?>                            
                                 <a href="news.php?user=<?php echo $user; ?>"><i class="fa fa-newspaper-o"></i> <span class="nav-label">Noticias</span> </a>
                             <?php }?>
@@ -137,6 +141,7 @@
 
                 </div>
             </nav>
+            <!--end menu-->
 
             <div id="page-wrapper" class="gray-bg dashbard-1">
                 <div class="row border-bottom">
@@ -169,13 +174,13 @@
                 <!-- Contenido de index -->
                 <div class="row" style="max-height: 600px;">
                     <div class="col-lg-6">
-                        <div class="jumbotron">
+                        <div class="jumbotron" style="background: rgba(204, 204, 204, 0);">
 
                             <h1><?php echo str_replace('|', '', $subtitle);?> </h1>
                             <?php if($colegio == 1){?>
-                                <h3 class="text-justify">Nuestro colegio con 30 años al servicio de la educación y el aprendizaje, en su educativo, avanzan con un alto desarrollo intelectual, formal y espiritual, donde el alumno se integra a la sociedad como un ser íntegro capacitado para ser un líder positivo, con amor y respeto a sí mismo y a los demás, comenzando en la educación Pre Básica hasta el término de su Educación Media Científica Humanista entregando jóvenes de sólida formación, cimiento fundamental para proseguir su educación superior con el objetivo de ser grandes personas, capaces de vivir su vocación y participar en la sociedad con principios éticos, valóricos, religiosos y con amplio sentido en cuanto al concepto y sentido de Educación.</h3>
+                                <h3 class="text-justify" style="font-weight:normal; line-height: 22px;">Nuestro colegio con 30 años al servicio de la educación y el aprendizaje, en su educativo, avanzan con un alto desarrollo intelectual, formal y espiritual, donde el alumno se integra a la sociedad como un ser íntegro capacitado para ser un líder positivo, con amor y respeto a sí mismo y a los demás, comenzando en la educación Pre Básica hasta el término de su Educación Media Científica Humanista entregando jóvenes de sólida formación, cimiento fundamental para proseguir su educación superior con el objetivo de ser grandes personas, capaces de vivir su vocación y participar en la sociedad con principios éticos, valóricos, religiosos y con amplio sentido en cuanto al concepto y sentido de Educación.</h3>
                             <?php }else{ ?>
-                                <h3 class="text-justify">El Colegio Particular N°95 Andrés Bello, es una institución de educación humanista científica que funda su línea de acción a partir del compromiso social y la conciencia ambiental. Dentro de este contexto, esta unidad educativa, articula desde la familia, la promoción de competencias que habiliten al alumno para una inserción real y efectiva dentro de la sociedad productiva y paralelamente con una mirada ecológica sistémica y sostenible del desarrollo, teniendo como objetivo final el ingreso a la educación superior.</h3>
+                                <h3 class="text-justify" style="font-weight:normal; line-height: 22px;">El Colegio Particular N°95 Andrés Bello, es una institución de educación humanista científica que funda su línea de acción a partir del compromiso social y la conciencia ambiental. Dentro de este contexto, esta unidad educativa, articula desde la familia, la promoción de competencias que habiliten al alumno para una inserción real y efectiva dentro de la sociedad productiva y paralelamente con una mirada ecológica sistémica y sostenible del desarrollo, teniendo como objetivo final el ingreso a la educación superior.</h3>
                             <?php } ?>
                         </div>
                     </div>
@@ -194,7 +199,7 @@
                                 <h5>Nuestra misión</h5>
                             </div>
                             <div class="ibox-content">
-                                <p class="text-justify">Entregar una educación de calidad; siendo éste un lugar de aprendizaje, que pone el saber al alcance de todos, brindando las herramientas necesarias para que nuestros alumnos sean directores de su propio aprendizaje, y una formación integral que los capacite adecuadamente para enfrentar los desafíos que plantea la sociedad moderna. Crear un clima apropiado para que los alumnos creen un espacio donde niños y jóvenes aprendan a vivir en comunidad, alcanzando un desarrollo emocional equilibrado y mentalmente sano, fomentando actitudes positivas de convivencia y comportamientos con principios éticos.</p>
+                                <p class="text-justify" style="font-size:15px">Entregar una educación de calidad; siendo éste un lugar de aprendizaje, que pone el saber al alcance de todos, brindando las herramientas necesarias para que nuestros alumnos sean directores de su propio aprendizaje, y una formación integral que los capacite adecuadamente para enfrentar los desafíos que plantea la sociedad moderna. Crear un clima apropiado para que los alumnos creen un espacio donde niños y jóvenes aprendan a vivir en comunidad, alcanzando un desarrollo emocional equilibrado y mentalmente sano, fomentando actitudes positivas de convivencia y comportamientos con principios éticos.</p>
                             </div>
                         </div>
                     </div>
@@ -205,10 +210,10 @@
                             <div class="ibox-title">
                                 <h5>Nuestros valores</h5>
                             </div>
-                            <div class="ibox-content">
+                            <div class="ibox-content" style="font-size:15px">
                                 <?php if($colegio == 1){?>
                                     <ul>
-                                        <li><p>1.Responsabilidad: Asumir las actividades y deberes en los que se compromete.</p></li>
+                                        <li><p>Responsabilidad: Asumir las actividades y deberes en los que se compromete.</p></li>
                                         <li><p>Respeto: Mantener una actitud cordial con todos los integrantes de la unidad educativa.</p></li>
                                         <li><p>Tolerancia: Respeto y consideración hacia las diferentes formas de pensar, actuar y sentir de los demás, entendiendo la diversidad de manifestaciones espirituales ideales y sociales.</p></li>
                                         <li><p>Solidaridad: Voluntad para cooperar y colaborar, tanto en los planos afectivos como institucionales (Cantos, eventos, campañas estudios otros).</p></li>
